@@ -1,1 +1,1 @@
-# ICST201
+# ICST201 Assignments Laboratory Exercises Projects

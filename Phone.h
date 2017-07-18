@@ -4,8 +4,6 @@
 
 const int CAPACITY = 1024;
 
-
-
 class List
 {
 	public:
@@ -25,10 +23,9 @@ class List
 
 		int CodeArray[CAPACITY];
 		double PriceArray[CAPACITY];
-		String NameArray[CAPACITY];
+		string NameArray[CAPACITY];
 
 };
 
 ostream &operator << (ostream &out, const List &aList);
 #endif
-

@@ -37,14 +37,14 @@ void List::insert(string Name, double price, int code, int pos)
   }
 // First shift array elements right to make room for item
     for(int i = mySize; i > pos; i--){
-         CodeArray[i] = myArray[i - 1];
+         CodeArray[i] = CodeArray[i - 1];
 		 NameArray[pos] = NameArray[i-1];
 		 PriceArray[pos] = PriceArray[i-1];
 	}
 // Now insert item at position pos and increase list size
-    CodeArray[pos] = mySize;
-	NameArray[pos] = "Samsung Galaxy Series";
-	PriceArray[pos] = (i * 3.14159)*100
+    CodeArray[pos] = Code;
+	NameArray[pos] = Name;
+	PriceArray[pos] = Prize;
     mySize++;
 }
 
@@ -64,11 +64,10 @@ return;
 }
 // Shift array elements left to close the gap
      for(int i = pos; i < mySize; i++){
-		 CodeArray[i] = myArray[i + 1];
-		 NameArray[pos] = NameArray[i + 1];
-		 PriceArray[pos] = PriceArray[i + 1];
+		 CodeArray[i] = CodeArray[i + 1];
+		 NameArray[i] = NameArray[i + 1];
+		 PriceArray[i] = PriceArray[i + 1];
 }
 // Decrease list size
       mySize--;
 }
-

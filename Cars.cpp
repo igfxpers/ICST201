@@ -7,12 +7,12 @@
  * 	problem:
  * 		make a linked list of cars with its Brand and model, color and price
  * 		out of the sample file (classes6.cpp).
- *      input must be on a file
  * 
+ * use filestream//
  **/
 
 #include <iostream>
-#include <stdlib.h>
+# include <stdlib.h>
 #include <fstream>
 
 using namespace std;
@@ -55,7 +55,7 @@ void LList::insert(string b, string c, double p){
 	newNode->BrandAndModel = b;
 	newNode->Color = c;
 	newNode->Price = p;
-	newNode->LINK = NULL;
+	
 	if(first == 0)
 		newNode->LINK = 0;
 	else
@@ -80,18 +80,15 @@ int main(){
 	double Price;
 	ifstream myfile;
 	
-	myfile.open("myfile.txt");
-
-	while(!myfile.eof()){
+	myfile.open("myfile.in");
+    while(!myfile.eof()){
 	    myfile >> Brand;
 	    myfile >> Color;
 	    myfile >> Price;
 	    L.insert(Brand, Color, Price);
 	}
-	myfile.close();
-	
 	L.displayList();
-	L.~LList();
+
 	
 	return 0;
 }

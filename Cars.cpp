@@ -7,8 +7,8 @@
  * 	problem:
  * 		make a linked list of cars with its Brand and model, color and price
  * 		out of the sample file (classes6.cpp).
+ *      input must be on a file
  * 
- * use filestream//
  **/
 
 #include <iostream>
@@ -55,7 +55,7 @@ void LList::insert(string b, string c, double p){
 	newNode->BrandAndModel = b;
 	newNode->Color = c;
 	newNode->Price = p;
-	
+	newNode->LINK = NULL;
 	if(first == 0)
 		newNode->LINK = 0;
 	else
@@ -76,30 +76,22 @@ void LList::displayList(){
 
 int main(){
 	LList L;
-	string b, c;
-	double p;
-	char choice;
-	do{
-	cout << "Please enter Brand and model: ";
-	cin >> b;
-	cout << "Please enter Color: ";
-	cin >> c;
-	cout << "Please enter price: ";
-	cin >>  p;
-	cout << "Insert Again?(y/n) ";
-	cin >> choice;
-	}while(choice == 'y' || choice == 'Y');
+	string Brand, Color;
+	double Price;
+	ifstream myfile;
 	
-	L.insert(b,c,p);
+	myfile.open("myfile.txt");
+
+	while(!myfile.eof()){
+	    myfile >> Brand;
+	    myfile >> Color;
+	    myfile >> Price;
+	    L.insert(Brand, Color, Price);
+	}
+	myfile.close();
+	
 	L.displayList();
 	L.~LList();
+	
 	return 0;
 }
-
-
-
-
-
-
-
-

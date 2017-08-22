@@ -43,13 +43,7 @@ Precondition: item is the value to be inserted; there is room in
 the array (mySize < CAPACITY); and the position satisfies 0 <= pos <= mySize.
 Postcondition: item has been inserted into the list at the position determined by pos (provided there is room and pos is a legal position).
 ------------------------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
+  
 void erase(int pos);
 /*------------------------------------------------------------------------------------------------------------------------------------------
 Remove a value from the list at a given position.
